@@ -3,7 +3,7 @@ class VendingMachine {
       this.transactionTotal = 0
       this.acceptableCurrency = {
         quarter: .25,
-        dime: .1,
+        dime: .10,
         nickel: .05
       }
       this.foodItems = [{
@@ -27,22 +27,40 @@ class VendingMachine {
   
     addMoney(coin) {
       //validate coin
-      //  increase total 
-      //return total
+      let total = 0
+      for (let i = 0; i < this.foodItems.length; i++) {
+          
+      }
+      //  increase total
+     return total 
     }
-    vend(foodId) {
+    vend(item) {
+        
+        if(this.total >= this.foodItems.price)
       //find item
+      if(this.transactionTotal >= item.price && item.quantity > 0)
       //if transactionTotal >= item.price && item.quantity > 0
+      item.quantity--
       //  item.quantity --
+      this.transactionTotal -= item.price
       //  transactionTotal -= item.price
+      this.machineTotal += item.price
       //  machineTotal += item.price
       //return item.img
+      //return item.img
     }
-    giveChange() {
+   giveChange() {
+        this.total = 0
+        return this.total
+        } 
       //transactionTotal = 0
-    }
+    
   
     getItems() {
+        for (let i = 0; i < this.foodItems.length; i++) {
+            
+            
+        }
       return this.foodItems
     }
   }
