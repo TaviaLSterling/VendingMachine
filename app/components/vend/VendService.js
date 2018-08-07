@@ -1,7 +1,7 @@
 //PRIVATE PARTS
-
+import VendingMachine from "./app/models/VendingMachine.js"
 let total = 0
-
+const vendingMachine = new VendingMachine
 //dictionary - key value pairs
 const currency = {
     quarter: .25,
@@ -17,7 +17,7 @@ class VendService {
     addMoney(coinStr) {
         console.log('service: ', coinStr)
         //confirm currency is acceptable
-        if (currency[coinStr]) {
+        if (VendingMachine.acceptableCurrency[coinStr]) {
             total += currency[coinStr]
         }
 
